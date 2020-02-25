@@ -34,7 +34,7 @@ const VideoID = [];
 const FirstLoginFlag = ['true'];
 async function WorkStart() {
   await RPA.Google.authorize({
-    accessToken: process.env.GOOGLE_ACCESS_TOKEN,
+  // accessToken: process.env.GOOGLE_ACCESS_TOKEN,
     refreshToken: process.env.GOOGLE_REFRESH_TOKEN,
     tokenType: 'Bearer',
     expiryDate: parseInt(process.env.GOOGLE_EXPIRY_DATE, 10)
@@ -59,7 +59,7 @@ async function WorkStart() {
 
 async function Start(WorkData, Row) {
   await RPA.Google.authorize({
-    //accessToken: process.env.GOOGLE_ACCESS_TOKEN,
+  // accessToken: process.env.GOOGLE_ACCESS_TOKEN,
     refreshToken: process.env.GOOGLE_REFRESH_TOKEN,
     tokenType: 'Bearer',
     expiryDate: parseInt(process.env.GOOGLE_EXPIRY_DATE, 10)
