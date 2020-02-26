@@ -64,69 +64,69 @@ async function Start(WorkData, Row) {
     tokenType: 'Bearer',
     expiryDate: parseInt(process.env.GOOGLE_EXPIRY_DATE, 10)
   });
-  // B列(本日の日付)を取得
-  const Today = await RPA.Google.Spreadsheet.getValues({
-    spreadsheetId: `${SSID}`,
-    range: `${SSName}!B1:B1`
-  });
-  // C列(非公開指定日)を取得
-  const WorkRow = await RPA.Google.Spreadsheet.getValues({
-    spreadsheetId: `${SSID}`,
-    range: `${SSName}!C3:C10000`
-  });
-  const WorkRow2 = await RPA.Google.Spreadsheet.getValues({
-    spreadsheetId: `${SSID}`,
-    range: `${SSName2}!C2:C10000`
-  });
-  // 2019年のシート
-  for (var i in WorkRow) {
-    if (Today[0][0] == WorkRow[i][0]) {
-      RPA.Logger.info('本日の日付 　　　　　　　→ ', Today[0][0]);
-      RPA.Logger.info('本日の日付と一致です 　　→ ', WorkRow[i][0]);
-      Row[0] = Number(i) + 3;
-      RPA.Logger.info('この行の作業を開始します → ', Row[0]);
-      // シートから作業対象行のデータを取得
-      WorkData[0] = await RPA.Google.Spreadsheet.getValues({
-        spreadsheetId: `${SSID}`,
-        range: `${SSName}!A${Row[0]}:F${Row[0]}`
-      });
-      RPA.Logger.info(WorkData[0]);
-      // F列に"確認中"と記載
-      await RPA.Google.Spreadsheet.setValues({
-        spreadsheetId: `${SSID}`,
-        range: `${SSName}!F${Row[0]}:F${Row[0]}`,
-        values: [['確認中']]
-      });
-      RPA.Logger.info(`${Row[0]} 行目のステータスを"確認中"に変更しました`);
-      await WorkStart();
-    }
-  }
-  if (Today[0][0] != WorkRow[i][0]) {
-    RPA.Logger.info(`${SSName2} 年のシートに移動します`);
-    // 2020年のシート
-    for (var i in WorkRow2) {
-      if (Today[0][0] == WorkRow2[i][0]) {
-        RPA.Logger.info('本日の日付 　　　　　　　→ ', Today[0][0]);
-        RPA.Logger.info('本日の日付と一致です 　　→ ', WorkRow2[i][0]);
-        Row[0] = Number(i) + 2;
-        RPA.Logger.info('この行の作業を開始します → ', Row[0]);
-        // シートから作業対象行のデータを取得
-        WorkData[0] = await RPA.Google.Spreadsheet.getValues({
-          spreadsheetId: `${SSID}`,
-          range: `${SSName2}!A${Row[0]}:F${Row[0]}`
-        });
-        RPA.Logger.info(WorkData[0]);
-        // F列に"確認中"と記載
-        await RPA.Google.Spreadsheet.setValues({
-          spreadsheetId: `${SSID}`,
-          range: `${SSName2}!F${Row[0]}:F${Row[0]}`,
-          values: [['確認中']]
-        });
-        RPA.Logger.info(`${Row[0]} 行目のステータスを"確認中"に変更しました`);
-        await WorkStart();
-      }
-    }
-  }
+//   // B列(本日の日付)を取得
+//   const Today = await RPA.Google.Spreadsheet.getValues({
+//     spreadsheetId: `${SSID}`,
+//     range: `${SSName}!B1:B1`
+//   });
+//   // C列(非公開指定日)を取得
+//   const WorkRow = await RPA.Google.Spreadsheet.getValues({
+//     spreadsheetId: `${SSID}`,
+//     range: `${SSName}!C3:C10000`
+//   });
+//   const WorkRow2 = await RPA.Google.Spreadsheet.getValues({
+//     spreadsheetId: `${SSID}`,
+//     range: `${SSName2}!C2:C10000`
+//   });
+//   // 2019年のシート
+//   for (var i in WorkRow) {
+//     if (Today[0][0] == WorkRow[i][0]) {
+//       RPA.Logger.info('本日の日付 　　　　　　　→ ', Today[0][0]);
+//       RPA.Logger.info('本日の日付と一致です 　　→ ', WorkRow[i][0]);
+//       Row[0] = Number(i) + 3;
+//       RPA.Logger.info('この行の作業を開始します → ', Row[0]);
+//       // シートから作業対象行のデータを取得
+//       WorkData[0] = await RPA.Google.Spreadsheet.getValues({
+//         spreadsheetId: `${SSID}`,
+//         range: `${SSName}!A${Row[0]}:F${Row[0]}`
+//       });
+//       RPA.Logger.info(WorkData[0]);
+//       // F列に"確認中"と記載
+//       await RPA.Google.Spreadsheet.setValues({
+//         spreadsheetId: `${SSID}`,
+//         range: `${SSName}!F${Row[0]}:F${Row[0]}`,
+//         values: [['確認中']]
+//       });
+//       RPA.Logger.info(`${Row[0]} 行目のステータスを"確認中"に変更しました`);
+//       await WorkStart();
+//     }
+//   }
+//   if (Today[0][0] != WorkRow[i][0]) {
+//     RPA.Logger.info(`${SSName2} 年のシートに移動します`);
+//     // 2020年のシート
+//     for (var i in WorkRow2) {
+//       if (Today[0][0] == WorkRow2[i][0]) {
+//         RPA.Logger.info('本日の日付 　　　　　　　→ ', Today[0][0]);
+//         RPA.Logger.info('本日の日付と一致です 　　→ ', WorkRow2[i][0]);
+//         Row[0] = Number(i) + 2;
+//         RPA.Logger.info('この行の作業を開始します → ', Row[0]);
+//         // シートから作業対象行のデータを取得
+//         WorkData[0] = await RPA.Google.Spreadsheet.getValues({
+//           spreadsheetId: `${SSID}`,
+//           range: `${SSName2}!A${Row[0]}:F${Row[0]}`
+//         });
+//         RPA.Logger.info(WorkData[0]);
+//         // F列に"確認中"と記載
+//         await RPA.Google.Spreadsheet.setValues({
+//           spreadsheetId: `${SSID}`,
+//           range: `${SSName2}!F${Row[0]}:F${Row[0]}`,
+//           values: [['確認中']]
+//         });
+//         RPA.Logger.info(`${Row[0]} 行目のステータスを"確認中"に変更しました`);
+//         await WorkStart();
+//       }
+//     }
+//   }
   RPA.Logger.info('作業を終了します');
   await RPA.WebBrowser.quit();
 }
