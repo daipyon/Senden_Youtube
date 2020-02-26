@@ -140,7 +140,7 @@ async function Start(WorkData, Row) {
         RPA.Logger.info(`${Row[0]} 行目のステータスを"確認中"に変更しました`);
         await WorkStart();
       } else if (
-        Today[0][0] == WorkRow[i][0] &&
+        Today[0][0] == WorkRow2[i][0] &&
         WorkStatus2[i][0] == '非公開完了'
       ) {
         RPA.Logger.info(
