@@ -184,7 +184,6 @@ async function AbemaLogin() {
     const NextButton2 = await RPA.WebBrowser.findElementById('submit');
     await RPA.WebBrowser.mouseClick(NextButton2);
   }
-  RPA.Logger.info('Youtube Studioに遷移します');
   await RPA.sleep(8000);
 }
 
