@@ -165,7 +165,7 @@ async function Start(WorkData, Row) {
     await RPA.Slack.chat.postMessage({
       token: Slack_Token,
       channel: Slack_Channel,
-      text: '【Youtube 非公開設定】でエラーが発生しました！'
+      text: '【宣伝_Youtube 非公開設定】でエラーが発生しました！'
     });
   }
   RPA.Logger.info('作業を終了します');
