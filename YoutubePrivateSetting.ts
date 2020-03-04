@@ -159,7 +159,7 @@ async function Start(WorkData, Row) {
       }
     }
   } catch (error) {
-    RPA.Logger.info('エラーが発生しました！');
+    RPA.SystemLogger.error(error);
     await RPA.WebBrowser.takeScreenshot();
     // Slackにも通知
     await RPA.Slack.chat.postMessage({
