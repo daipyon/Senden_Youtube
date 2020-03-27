@@ -224,7 +224,7 @@ async function PrivateSetting(WorkData, Row) {
     await RPA.sleep(1000);
     // 「タイトル」をクリック
     const Title = await RPA.WebBrowser.findElementByXPath(
-      '//*[@id="text-item-0"]'
+      '//*[@id="text-item-5"]'
     );
     await RPA.WebBrowser.mouseClick(Title);
     await RPA.sleep(1000);
@@ -242,8 +242,8 @@ async function PrivateSetting(WorkData, Row) {
     await RPA.sleep(3000);
     // 画像のURLを取得
     const ImageUrl = await RPA.WebBrowser.driver
-      .findElement(By.css('#img-with-fallback'))
-      .getAttribute('src');
+      .findElement(By.css('#thumbnail-anchor'))
+      .getAttribute('href');
     const ImageUrlSplit = ImageUrl.split('/');
     RPA.Logger.info(ImageUrlSplit);
     // 動画のIDを取得
