@@ -256,7 +256,7 @@ async function GetData() {
       );
       await RPA.WebBrowser.mouseMove(UploadVideo);
       await RPA.sleep(1000);
-      for (var i = 1; i <= Total[0]; i++) {
+      for (let i = 1; i <= Total[0]; i++) {
         try {
           // エラー文言が出てきた場合の処理
           const CancelProcess = await RPA.WebBrowser.findElementByXPath(
