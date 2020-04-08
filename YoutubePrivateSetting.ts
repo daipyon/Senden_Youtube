@@ -8,6 +8,7 @@ const Slack_Channel = process.env.AbemaTV_RPAError_Channel;
 // スプレッドシートIDとシート名を記載
 // const mySSID = process.env.My_SheetID;
 const SSID = process.env.Senden_Youtube_SheetID;
+const SSID2 = process.env.Senden_Youtube_SheetID2;
 const SSName = process.env.Senden_Youtube_SheetName;
 const SSName2 = process.env.Senden_Youtube_SheetName2;
 const SSName3 = process.env.Senden_Youtube_SheetName3;
