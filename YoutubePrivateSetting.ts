@@ -308,44 +308,44 @@ async function PrivateSetting(WorkData, Row) {
 async function SetDataRow(WorkData, Video_URL, VideoID, General_URL) {
   // 非公開シートの最終行の次の行を取得
   const WorkRow3 = await RPA.Google.Spreadsheet.getValues({
-    spreadsheetId: `${SSID}`,
+    spreadsheetId: `${SSID2}`,
     range: `${SSName3}!B1:B30000`
   });
   const LastRow = WorkRow3.length + 1;
   RPA.Logger.info('この行に転記します　　　 → ', LastRow);
   // B列に非公開指定日を記載
   await RPA.Google.Spreadsheet.setValues({
-    spreadsheetId: `${SSID}`,
+    spreadsheetId: `${SSID2}`,
     range: `${SSName3}!B${LastRow}:B${LastRow}`,
     values: [[WorkData[0][0][2]]]
   });
   // C列に"RPA"と記載
   await RPA.Google.Spreadsheet.setValues({
-    spreadsheetId: `${SSID}`,
+    spreadsheetId: `${SSID2}`,
     range: `${SSName3}!C${LastRow}:C${LastRow}`,
     values: [['RPA']]
   });
   // E列に動画URLを記載
   await RPA.Google.Spreadsheet.setValues({
-    spreadsheetId: `${SSID}`,
+    spreadsheetId: `${SSID2}`,
     range: `${SSName3}!E${LastRow}:E${LastRow}`,
     values: [[`${Video_URL}=${VideoID[0]}`]]
   });
   // G列に一般URLを記載
   await RPA.Google.Spreadsheet.setValues({
-    spreadsheetId: `${SSID}`,
+    spreadsheetId: `${SSID2}`,
     range: `${SSName3}!G${LastRow}:G${LastRow}`,
     values: [[`${General_URL}/${VideoID[0]}`]]
   });
   // I列にタイトルを記載
   await RPA.Google.Spreadsheet.setValues({
-    spreadsheetId: `${SSID}`,
+    spreadsheetId: `${SSID2}`,
     range: `${SSName3}!I${LastRow}:I${LastRow}`,
     values: [[WorkData[0][0][3]]]
   });
   // J列に公開日を記載
   await RPA.Google.Spreadsheet.setValues({
-    spreadsheetId: `${SSID}`,
+    spreadsheetId: `${SSID2}`,
     range: `${SSName3}!J${LastRow}:J${LastRow}`,
     values: [[`(${WorkData[0][0][1]})`]]
   });
