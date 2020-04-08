@@ -218,10 +218,9 @@ async function PrivateSetting(WorkData, Row) {
     );
     await RPA.WebBrowser.mouseClick(Icon);
     await RPA.sleep(1000);
-    await RPA.WebBrowser.takeScreenshot();
     // 「タイトル」をクリック
     const Title = await RPA.WebBrowser.findElementByXPath(
-      '//*[@id="text-item-5"]'
+      '//*[@id="text-item-0"]'
     );
     await RPA.WebBrowser.mouseClick(Title);
     await RPA.sleep(1000);
