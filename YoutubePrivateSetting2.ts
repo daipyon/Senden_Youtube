@@ -122,7 +122,7 @@ async function YoutubeLogin() {
     }
   } catch (error) {
     ErrorText[0] = error;
-    return Start();
+    await Start();
   }
 }
 
@@ -202,7 +202,7 @@ async function VideoDate(Yesterday) {
     await RPA.sleep(3000);
   } catch (error) {
     ErrorText[0] = error;
-    return Start();
+    await Start();
   }
 }
 
@@ -325,7 +325,7 @@ async function GetData() {
     }
   } catch (error) {
     ErrorText[0] = error;
-    return Start();
+    await Start();
   }
 }
 
