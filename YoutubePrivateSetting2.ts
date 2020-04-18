@@ -128,7 +128,7 @@ async function YoutubeLogin() {
 
 async function VideoDate(Yesterday) {
   const Icon = await RPA.WebBrowser.wait(
-    RPA.WebBrowser.Until.elementLocated({ xpath: '//*[@id="filter-icon"]' }),
+    RPA.WebBrowser.Until.elementLocated({ id: 'filter-icon' }),
     5000
   );
   await RPA.WebBrowser.mouseClick(Icon);
