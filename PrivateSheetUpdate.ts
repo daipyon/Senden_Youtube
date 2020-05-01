@@ -128,11 +128,11 @@ async function YoutubeLogin() {
 
 async function VideoDate(Yesterday) {
   const Icon = await RPA.WebBrowser.wait(
-    RPA.WebBrowser.Until.elementLocated({ id: 'filter-icon' }),
+    RPA.WebBrowser.Until.elementLocated({ id: 'text-input' }),
     5000
   );
   await RPA.WebBrowser.mouseClick(Icon);
-  await RPA.sleep(1000);
+  await RPA.sleep(2000);
 
   // テスト用
   // const Videodate = await RPA.WebBrowser.wait(
@@ -277,6 +277,8 @@ async function GetData() {
           // `/html/body/ytcp-app/ytcp-entity-page/div/div/main/div/ytcp-animatable[30]/ytcp-video-section/ytcp-video-section-content/div/ytcp-video-row[${Number(
           //   i
           // )}]/div/div[3]/div/div/span`
+
+          // 4/30 パス変更
           `/html/body/ytcp-app/ytcp-entity-page/div/div/main/div/ytcp-animatable[30]/ytcp-content-section/ytcp-video-section/ytcp-video-section-content/div/ytcp-video-row[${Number(
             i
           )}]/div/div[3]/div/div/span`
