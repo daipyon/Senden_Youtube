@@ -671,6 +671,7 @@ async function GetData3(TitleList) {
   // while (0 == 0) {
   // while (NumberofViewsList.length < TitleList.length) {
   while (LoopFlag2 == 'true') {
+    await RPA.sleep(1000);
     // for (let i = 0; i <= 29; i++) {
     // 一覧が出るまで待機
     await RPA.WebBrowser.wait(
@@ -679,10 +680,6 @@ async function GetData3(TitleList) {
       }),
       15000
     );
-    await RPA.sleep(1000);
-    await RPA.Logger.info('スクロールします');
-    await RPA.WebBrowser.scrollTo({ selector: `#footer` });
-    await RPA.sleep(1000);
     // タイトルを取得
     // const Title: WebElement = await RPA.WebBrowser.driver.executeScript(
     //   `return document.getElementsByClassName('style-scope ytcp-video-row cell-body tablecell-video floating-column last-floating-column')[${i}].children[0].children[0].children[0].getAttribute('aria-label')`
@@ -726,18 +723,23 @@ async function GetData3(TitleList) {
         }
       }
     }
+    await RPA.sleep(1000);
+    await RPA.Logger.info('スクロールします');
+    await RPA.WebBrowser.scrollTo({ selector: `#footer` });
+    await RPA.sleep(1000);
+    await RPA.WebBrowser.takeScreenshot();
     // if (NumberofViewsList.length < TitleList.length) {
     await RPA.Logger.info('取得が完了していないため次のページに進みます');
     await RPA.Logger.info('タイトルリストをクリアします');
     YoutubeTitleList = [];
     const NextPage = await RPA.WebBrowser.findElementById('navigate-after');
     await RPA.WebBrowser.mouseClick(NextPage);
-    await RPA.Logger.info('10秒待機します');
-    await RPA.sleep(10000);
-    await RPA.Logger.info('スクロールします');
-    await RPA.WebBrowser.scrollTo({ selector: `#footer` });
+    // await RPA.Logger.info('10秒待機します');
+    // await RPA.sleep(10000);
+    // await RPA.Logger.info('スクロールします');
+    // await RPA.WebBrowser.scrollTo({ selector: `#footer` });
     await RPA.sleep(1000);
-    await RPA.WebBrowser.takeScreenshot();
+
     const Range = await RPA.WebBrowser.wait(
       RPA.WebBrowser.Until.elementLocated({
         className: 'page-description style-scope ytcp-table-footer'
