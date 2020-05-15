@@ -109,7 +109,7 @@ async function Start() {
         if (MonthFlag == '前月') {
           date = await RPA.Google.Spreadsheet.getValues({
             spreadsheetId: `${mySSID2[j]}`,
-            range: `${SSName4[n]}!Q3:AV${LastRow2}`
+            range: `${SSName4[n]}!Q3:AW${LastRow2}`
           });
         }
         if (MonthFlag == '今月') {
