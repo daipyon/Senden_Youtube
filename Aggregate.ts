@@ -787,7 +787,6 @@ async function GetData3(TitleList) {
       }
     }
     if (LoopFlag2 == 'true') {
-      await RPA.WebBrowser.takeScreenshot();
       LoopFlag2 = '';
       // テスト①
       await RPA.Logger.info('I のカウント⑤　　　　→', CountI[0]);
@@ -808,6 +807,7 @@ async function GetData3(TitleList) {
     }
     Count++;
   }
+  await RPA.WebBrowser.takeScreenshot();
   if (LoopFlag2 == 'false') {
     // テスト①
     await RPA.Logger.info('I のカウント⑥　　　　→', CountI[0]);
