@@ -486,7 +486,7 @@ async function SetProgram() {
   // const Title = await RPA.WebBrowser.findElementById('text-item-5');
 
   // 本番用・ヘッドレスモードオフ（テスト）用
-  const Title = await RPA.WebBrowser.findElementById('text-item-0');
+  const Title = await RPA.WebBrowser.findElementById('text-item-1');
 
   await RPA.WebBrowser.mouseClick(Title);
   await RPA.sleep(1000);
