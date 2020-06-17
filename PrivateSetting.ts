@@ -260,7 +260,7 @@ async function TitleInput() {
   // const Title = await RPA.WebBrowser.findElementById('text-item-5');
 
   // 本番用・ヘッドレスモードオフ（テスト）用
-  // 6/17 元に戻した
+  // 6/17 元に戻った
   const Title = await RPA.WebBrowser.findElementById('text-item-0');
   // 6/10 要素変更
   // const Title = await RPA.WebBrowser.findElementById('text-item-1');
