@@ -336,7 +336,7 @@ async function GetData() {
         FisrtGetDataFlag = 'false';
         await RPA.Logger.info('次のページに進みます');
         const NextPage = await RPA.WebBrowser.findElementById('navigate-after');
-        await RPA.WebBrowser.mouseClick(NextPage);
+        await NextPage.click();
         await RPA.sleep(3000);
         break;
       }
