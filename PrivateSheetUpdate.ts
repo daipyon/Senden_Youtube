@@ -39,7 +39,7 @@ async function Start() {
     await RPA.Logger.info('本日の日付　　 　　 → ' + Today[0][0]);
     // 1週間前の日付をフォーマット変更して取得
     AWeekAgo = moment()
-      .subtract(7, 'days')
+      .subtract(8, 'days')
       .format('YYYY/MM/DD');
     await RPA.Logger.info('1週間前の日付 　　　→ ' + AWeekAgo);
     // 前月の25日をフォーマット変更して取得
