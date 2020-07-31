@@ -27,7 +27,8 @@ const SSID = process.env.Senden_Youtube_SheetID3;
 // 今月のシートIDを取得
 let ThisMonthSheetID;
 // シート名
-const SSName = [`News`, `公式`, `バラエティ`, `恋リア`];
+// const SSName = [`News`, `公式`, `バラエティ`, `恋リア`];
+const SSName = [`バラエティ`, `恋リア`];
 // 現在のシート名
 let CurrentSSName;
 
